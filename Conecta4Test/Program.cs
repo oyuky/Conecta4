@@ -1,5 +1,5 @@
 ﻿using Conecta4;
-using Conecta4.Services;
+using Conecta4.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +19,7 @@ namespace Conecta4Test
         static void Inicializar()
         {
             Console.WriteLine();
-            TableroServices tableroCtrl = new TableroServices();
+            Herramientas tableroCtrl = new Herramientas();
             var jugadorIni = tableroCtrl.TirarDados();
             while(jugadorIni==-1)
             {

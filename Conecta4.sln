@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conecta4.Test", "Conecta4Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conecta4.Services", "Conecta4.Services\Conecta4.Services.csproj", "{51C5AD3C-8629-4303-9CB1-BCC0D4FAB1C1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conecta4.WinForm", "Conecta4.Form\Conecta4.WinForm.csproj", "{F8463023-0183-4ECB-8DA2-2DFA58712355}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{51C5AD3C-8629-4303-9CB1-BCC0D4FAB1C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51C5AD3C-8629-4303-9CB1-BCC0D4FAB1C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51C5AD3C-8629-4303-9CB1-BCC0D4FAB1C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8463023-0183-4ECB-8DA2-2DFA58712355}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8463023-0183-4ECB-8DA2-2DFA58712355}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8463023-0183-4ECB-8DA2-2DFA58712355}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8463023-0183-4ECB-8DA2-2DFA58712355}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

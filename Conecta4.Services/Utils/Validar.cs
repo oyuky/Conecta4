@@ -1,6 +1,6 @@
-﻿using Conecta4.Services.BO;
+﻿using Conecta4.BO;
 
-namespace Conecta4.Services
+namespace Conecta4.Utils
 {
     /// <summary>
     /// Clase para validar si hay ganador

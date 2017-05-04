@@ -1,13 +1,17 @@
-﻿using Conecta4.Services.BO;
+﻿using Conecta4.BO;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace Conecta4.Services
+namespace Conecta4.Utils
 {
-    public class TableroServices
+    public class Herramientas
     {
         private Tablero tablero = new Tablero();
         /// <summary>
@@ -23,6 +27,25 @@ namespace Conecta4.Services
                 }
             tablero.Celdas = tablerotemp;
             return tablerotemp;
+        }
+      
+        public DataTable CrearTablero(int filasdt,int columnasdt)
+        {
+            DataTable dt = new DataTable("Tablero");
+            for (int i = 1; i <= columnasdt; i++)
+            {
+                dt.Columns.Add("Columna" + i, typeof(Int32));
+            }
+            for (int i = 1; i <= filasdt; i++)
+            {
+                DataRow row = dt.NewRow();
+                for (int j = 1; j <= columnasdt; j++)
+                {
+                    row[j - 1] = "0";
+                }
+                dt.Rows.Add(row);
+            }
+            return dt;
         }
         /// <summary>
         /// Se tiran los dados para ver que jugador es el primero 
