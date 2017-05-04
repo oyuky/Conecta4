@@ -51,7 +51,7 @@ namespace Conecta4.Utils
         /// Se tiran los dados para ver que jugador es el primero 
         /// </summary>
         /// <returns>Regresa el jugador que iniciara</returns>
-        public int TirarDados()
+        public int TirarDados(int temp)
         {
             Console.WriteLine("Jugador 1 presione una tecla para tirar dados:");
             Console.ReadKey();
@@ -80,6 +80,11 @@ namespace Conecta4.Utils
                 Console.WriteLine("Empate se requiere tirar dados nuevamente");
                 return -1;
             }
+        }
+        public int TirarDados()
+        {
+            Random rnd1 = new Random();
+            return rnd1.Next(0, 10);
         }
 
         public int Jugar(int jugador)

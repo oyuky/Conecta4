@@ -52,10 +52,19 @@
     <Compile Include="Conecta4.Designer.cs">
       <DependentUpon>Conecta4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inicio.Designer.cs">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Conecta4.resx">
       <DependentUpon>Conecta4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inicio.resx">
+      <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -85,6 +94,12 @@
       <Project>{51c5ad3c-8629-4303-9cb1-bcc0d4fab1c1}</Project>
       <Name>Conecta4.Services</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\amarillo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\rojo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

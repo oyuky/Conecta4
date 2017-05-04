@@ -16,7 +16,7 @@ namespace Conecta4.WinForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Conecta4());
+            Application.Run(new Inicio());
         }
     }
 }

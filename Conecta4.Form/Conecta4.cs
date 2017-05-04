@@ -59,31 +59,28 @@ namespace Conecta4.WinForm
 
         private void Columna_Click(object sender, EventArgs e)
         {
+
             PictureBox a = (PictureBox)sender;
-            //int celdas = n * n - minas;
-            //if (a.Tag.ToString().Substring(0, 1).Equals("1"))
+            int columna = int.Parse(a.Tag.ToString().Substring(0, 1));
+            tablero[columna, 0] = new PictureBox();
+            //if (columna <= 7)
+            //{
+            //    for (int i = columna; i >= 0; i--)
+            //    {
+            //        if (tablero[i, columna - 1].ToString() == "0")
+            //        {
+            //            tablero[i, columna - 1].Image = ficha;
+            //            fila = i;
+            //            break;
+            //        }
+            //        else
+            //        {
+            //        }
+            //    }
+            //}
+            //            if (a.Tag.ToString().Substring(0, 1).Equals("1"))
             //{
             //    a.Image = Image.FromFile("D:/Final/1.jpg");
-            //    // terminaJuego("Usted Pierde!!!");
-            //}
-            //else
-            //{
-            //    a.Image = Image.FromFile("D:/Final/2.jpg");
-            //    int res = cuenta(int.Parse(a.Tag.ToString().Substring(2, 1)), int.Parse(a.Tag.ToString().Substring(4, 1)));
-            //    //TextBox te = new TextBox();
-            //    Label te = new Label();
-            //    te.Text = res.ToString();
-            //    te.Location = new Point(a.Location.X, a.Location.Y);
-            //    te.Parent = mat[1, 1];
-            //    te.Width = 10;
-            //    te.Height = 50;
-            //    Controls.Add(te);
-            //    a.Visible = false;
-            //    cc++;
-            //    if (cc == celdas)
-            //    {
-            //        terminaJuego("Usted Gana!!!");
-            //    }
             //}
         }
     }
