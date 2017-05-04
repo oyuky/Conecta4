@@ -126,6 +126,7 @@ namespace Conecta4.Services
 
         public bool CalcularVertical(char ficha, int fila, int columna)
         {
+
             int contadorv = 0;
             if (fila <= 3)
             {
@@ -136,17 +137,17 @@ namespace Conecta4.Services
                         contadorv++;
                     else
                         break;
-                    if (contadorv >= 4)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
+
                 }
             }
-            return false;
+            if (contadorv >= 4)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public bool CalcularHorizontal(char ficha, int fila, int columna)

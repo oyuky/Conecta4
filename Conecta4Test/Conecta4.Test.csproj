@@ -53,10 +53,6 @@
       <Project>{51c5ad3c-8629-4303-9cb1-bcc0d4fab1c1}</Project>
       <Name>Conecta4.Services</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Conecta4\Conecta4.csproj">
-      <Project>{4C8A5379-1A0C-4F88-AE7C-D46EA4C0E283}</Project>
-      <Name>Conecta4</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
