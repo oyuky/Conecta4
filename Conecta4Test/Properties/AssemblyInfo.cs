@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // La información general de un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
-[assembly: AssemblyTitle("Conecta4")]
+[assembly: AssemblyTitle("Conecta4Test")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("Conecta4")]
+[assembly: AssemblyProduct("Conecta4Test")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // El siguiente GUID sirve como id. de typelib si este proyecto se expone a COM.
-[assembly: Guid("4c8a5379-1a0c-4f88-ae7c-d46ea4c0e283")]
+[assembly: Guid("e05fc2fa-f786-4810-b2f0-8eb40cff1f29")]
 
 // La información de versión de un ensamblado consta de los cuatro valores siguientes:
 //
