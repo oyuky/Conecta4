@@ -43,6 +43,7 @@
     <Compile Include="BO\Tablero.cs" />
     <Compile Include="TableroServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validar.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
