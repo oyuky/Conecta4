@@ -28,7 +28,48 @@ namespace Conecta4.Utils
             tablero.Celdas = tablerotemp;
             return tablerotemp;
         }
-      
+
+        public Tablero ConvertPictureBoxToTablero(PictureBox[,] tablero, int filas, int columnas)
+        {
+            Tablero tab = new Tablero();
+            char[,] tablerotemp = new char[filas, columnas];
+            for (int i = 0; i < filas; i++)
+                for (int j = 0; j < columnas; j++)
+                {
+                    var datos = tablero[i, j].Tag.ToString().Split(',');
+                    tablerotemp[i, j] = char.Parse(datos[0]);
+
+                }
+
+            tab.Celdas = tablerotemp;
+            return tab;
+        }
+
+        public bool Jugar(PictureBox[,] tablero, int filas, int columnas, int evalFila, int evalColumna, char ficha)
+        {
+            Tablero temp = ConvertPictureBoxToTablero(tablero, filas, columnas);
+
+            Validar validarCtrl = new Validar();
+            validarCtrl.tablero = temp;
+
+            if (validarCtrl.Vertical(ficha, evalFila, evalColumna - 1))
+            {
+                return true;
+            }
+            if (validarCtrl.Horizontal(ficha, evalFila, evalColumna - 1))
+            {
+                return true;
+            }
+            if (validarCtrl.DiagonalIzquierda(ficha, evalFila, evalColumna - 1))
+            {
+                return true;
+            }
+            if (validarCtrl.DiagonalDerecha(ficha, evalFila, evalColumna - 1))
+            {
+                return true;
+            }
+            return false;
+        }
         public DataTable CrearTablero(int filasdt,int columnasdt)
         {
             DataTable dt = new DataTable("Tablero");

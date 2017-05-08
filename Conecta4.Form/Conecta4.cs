@@ -2,6 +2,7 @@
 using System;
 using System.Configuration;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Conecta4.WinForm
@@ -10,7 +11,8 @@ namespace Conecta4.WinForm
     {
         private int filasdt = int.Parse(ConfigurationManager.AppSettings["NoFilas"]);
         private int columnasdt = int.Parse(ConfigurationManager.AppSettings["NoColumnas"]);
-        PictureBox[,] tablero;
+        private Herramientas herramientas = new Herramientas();
+        private PictureBox[,] tablero;
         public Conecta4()
         {
             InitializeComponent();
@@ -18,15 +20,15 @@ namespace Conecta4.WinForm
 
         private void Conecta4_Load(object sender, EventArgs e)
         {
-            Herramientas herramientas = new Herramientas();
-            //gvwTablero.DataSource = herramientas.CrearTablero(filasdt, columnasdt);
-            ImprimirTablero(filasdt+1, columnasdt);
+            pbFicha.Image = Properties.Resources.rojo;
+            pbFicha.Tag = "R";
+            ImprimirTablero(filasdt+1);
         }
 
-        private void ImprimirTablero(int filasdt, int columnasdt)
+        private void ImprimirTablero(int filas)
         {
-            tablero = new PictureBox[columnasdt, filasdt];
-            for (int i = 0; i < filasdt; i++)
+            tablero = new PictureBox[columnasdt, filas];
+            for (int i = 0; i < filas; i++)
             {
                 tablero[i, 0] = new PictureBox();
                 tablero[i, 0].BackColor = Color.Red;
@@ -39,7 +41,7 @@ namespace Conecta4.WinForm
                 Controls.Add(tablero[i, 0]);
                 continue;
             }
-            for (int i = 0; i < filasdt; i++)
+            for (int i = 0; i < filas; i++)
             {
                 for (int j = 0; j < columnasdt; j++)
                 {
@@ -51,7 +53,6 @@ namespace Conecta4.WinForm
                     tablero[i, j].Location = new Point(55 * i, 55 * j);
                     tablero[i, j].Tag = "0," + i + "," + j;
                     tablero[i, j].SizeMode = PictureBoxSizeMode.StretchImage;
-                    //tablero[i, j].MouseClick += new MouseEventHandler(Pic_Clic);
                     Controls.Add(tablero[i, j]);
                 }
             }
@@ -59,29 +60,33 @@ namespace Conecta4.WinForm
 
         private void Columna_Click(object sender, EventArgs e)
         {
-
             PictureBox a = (PictureBox)sender;
-            int columna = int.Parse(a.Tag.ToString().Substring(0, 1));
-            tablero[columna, 0] = new PictureBox();
-            //if (columna <= 7)
-            //{
-            //    for (int i = columna; i >= 0; i--)
-            //    {
-            //        if (tablero[i, columna - 1].ToString() == "0")
-            //        {
-            //            tablero[i, columna - 1].Image = ficha;
-            //            fila = i;
-            //            break;
-            //        }
-            //        else
-            //        {
-            //        }
-            //    }
-            //}
-            //            if (a.Tag.ToString().Substring(0, 1).Equals("1"))
-            //{
-            //    a.Image = Image.FromFile("D:/Final/1.jpg");
-            //}
+            int columna = int.Parse(a.Tag.ToString().Substring(2, 1));
+            char ficha = ' ';
+            for (int i = filasdt; i >= 0; i--)
+            {
+                var datos = tablero[columna, i].Tag.ToString().Split(',');
+                if (datos[0] == "0" && datos[2]!="0")
+                {
+                    tablero[columna, i].Tag = pbFicha.Tag.ToString() + "," + columna + "," + i;
+                    tablero[columna, i].Image = pbFicha.Image;
+                    if (pbFicha.Tag.ToString() == "R")
+                    {
+                        ficha = 'R';
+                        pbFicha.Tag = "A";
+                        pbFicha.Image = Properties.Resources.amarillo;
+                    }
+                    else
+                    {
+                        ficha = 'A';
+                        pbFicha.Tag = "R";
+                        pbFicha.Image = Properties.Resources.rojo;
+                    }
+                    if (herramientas.Jugar(tablero, filasdt, columnasdt, columna, i, ficha))
+                        lblGanador.Text = "Gana el jugador con la ficha " + ficha;
+                    break;
+                }
+            }
         }
     }
 }
